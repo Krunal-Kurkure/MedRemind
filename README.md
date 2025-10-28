@@ -56,10 +56,15 @@ npx react-native run-android
 
 
 //-------------------- Application Ui --------------- //
-![Image](https://github.com/user-attachments/assets/fb9fdd18-3f10-4b74-a177-1009ecbb8f1c)
-![Image](https://github.com/user-attachments/assets/09ad1294-18ab-44ed-8c89-37ceba7c24e0)
-![Image](https://github.com/user-attachments/assets/e9ebc7a6-732f-4653-b475-17dc72fcd7ca)
-![Image](https://github.com/user-attachments/assets/e9bf3def-95f3-4387-964c-719b2b85f7c9)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb9fdd18-3f10-4b74-a177-1009ecbb8f1c" width="300"/>
+  <img src="https://github.com/user-attachments/assets/09ad1294-18ab-44ed-8c89-37ceba7c24e0" width="300"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e9ebc7a6-732f-4653-b475-17dc72fcd7ca" width="300"/>
+  <img src="https://github.com/user-attachments/assets/e9bf3def-95f3-4387-964c-719b2b85f7c9" width="300"/>
+</p>
 
 
 
