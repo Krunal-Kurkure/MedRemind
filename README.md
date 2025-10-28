@@ -26,43 +26,6 @@ It’s a fully offline app powered by **AsyncStorage**, with smooth navigation a
 
 
 
-
-## 🏗️ Project Structure
-
-MedRemind/
-├── android/ # Native Android code (Java + resources)
-│ └── app/src/main/res/
-│ ├── mipmap-/ # App launcher icons (ic_launcher)
-│ ├── drawable-/ # Notification icons (ic_notification)
-│ └── xml/ # Adaptive icon XML configs
-│
-├── src/
-│ ├── screens/
-│ │ ├── HomeScreen.jsx # Main screen with medicine list, filters & FAB
-│ │ ├── AddMedicineScreen.jsx# Add/Edit medicine form + reminder setup
-│ │
-│ ├── components/
-│ │ └── MedicineItem.jsx # Single medicine card with delete/taken buttons
-│ │
-│ ├── storage/
-│ │ └── medicineStorage.js # AsyncStorage CRUD (add, load, delete, update)
-│ │
-│ ├── utils/
-│ │ └── notifications.js # Notifee notification scheduling & cancellation
-│ │
-│ └── App.js / AppNavigator.js # Root navigation
-│
-├── package.json
-├── README.md # This file
-└── App.json, index.js, etc.
-
-
-
-
-
-
----
-
 ## ⚙️ Features
 
 | Feature | Description |
