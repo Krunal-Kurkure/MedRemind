@@ -1,97 +1,122 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 MedRemind – Daily Medicine Reminder App
 
-# Getting Started
+> A smart and lightweight **React Native** app that helps users remember to take their medicines on time with **daily notifications**, dosage tracking, and a simple, beautiful UI.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
 
-```sh
-# Using npm
+
+
+## 🧭 Overview
+
+**MedRemind** allows users to:
+- Add medicines with name, dosage, and reminder time.  
+- Choose **when to take** (morning, afternoon, evening).  
+- Choose **before or after eating**.  
+- Automatically schedule **daily notifications** using [**Notifee**](https://notifee.app).  
+- View upcoming, missed, and taken medicines.  
+- Delete, update, or mark reminders as “taken.”  
+
+It’s a fully offline app powered by **AsyncStorage**, with smooth navigation and adaptive icons.
+
+---
+
+
+
+
+
+## 🏗️ Project Structure
+
+MedRemind/
+├── android/ # Native Android code (Java + resources)
+│ └── app/src/main/res/
+│ ├── mipmap-/ # App launcher icons (ic_launcher)
+│ ├── drawable-/ # Notification icons (ic_notification)
+│ └── xml/ # Adaptive icon XML configs
+│
+├── src/
+│ ├── screens/
+│ │ ├── HomeScreen.jsx # Main screen with medicine list, filters & FAB
+│ │ ├── AddMedicineScreen.jsx# Add/Edit medicine form + reminder setup
+│ │
+│ ├── components/
+│ │ └── MedicineItem.jsx # Single medicine card with delete/taken buttons
+│ │
+│ ├── storage/
+│ │ └── medicineStorage.js # AsyncStorage CRUD (add, load, delete, update)
+│ │
+│ ├── utils/
+│ │ └── notifications.js # Notifee notification scheduling & cancellation
+│ │
+│ └── App.js / AppNavigator.js # Root navigation
+│
+├── package.json
+├── README.md # This file
+└── App.json, index.js, etc.
+
+
+
+
+
+
+---
+
+## ⚙️ Features
+
+| Feature | Description |
+|----------|--------------|
+| 🧾 Add Medicine | Add medicine name, dosage, and reminder time |
+| ⏰ Daily Reminder | Notifee schedules notifications at user-set time |
+| 🍽️ Before / After Eating | Option to specify medicine timing context |
+| 🌞 Morning / Afternoon / Evening | Choose when to take |
+| 🗑️ Delete Medicine | Delete reminders and cancel notifications |
+| 🔕 Mark as Taken | Cancel scheduled reminders for that medicine |
+| 🔔 Local Notifications | Works even when the app is closed |
+| 💾 Offline Storage | Saved locally via AsyncStorage |
+| 🧭 Smooth Navigation | Implemented with React Navigation |
+| 🧩 Adaptive & Notification Icons | Custom app and monochrome notification icons |
+
+---
+
+
+
+
+
+//-------------------- Terminal Commands ---------------//
+# 1st Terminal command 
 npm start
 
-# OR using Yarn
-yarn start
-```
+# 2ns Terminal command
+npx react-native run-android
 
-## Step 2: Build and run your app
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
 
-### Android
 
-```sh
-# Using npm
-npm run android
 
-# OR using Yarn
-yarn android
-```
 
-### iOS
+## 📦 Required Packages
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Install all dependencies before running the project:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+```bash
 
-```sh
-bundle install
-```
+# Core React Native packages
+npm install react-native react
 
-Then, and every time you update your native dependencies, run:
+# Navigation
+npm install @react-navigation/native @react-navigation/native-stack
+npm install react-native-screens react-native-safe-area-context
 
-```sh
-bundle exec pod install
-```
+# Local Storage
+npm install @react-native-async-storage/async-storage
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+# Date & Time Picker
+npm install @react-native-community/datetimepicker
 
-```sh
-# Using npm
-npm run ios
+# Notifications
+npm install @notifee/react-native
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+# For daily scheduling logic
+npm install date-fns
